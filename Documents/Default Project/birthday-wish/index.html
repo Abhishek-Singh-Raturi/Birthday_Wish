@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday! 🎂</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <div class="cake">
+                <div class="candle"></div>
+                <div class="flame"></div>
+            </div>
+            <p>Loading birthday magic...</p>
+        </div>
+    </div>
+
+    <!-- Confetti Canvas -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- Floating Balloons -->
+    <div class="balloons-container" id="balloons"></div>
+
+    <!-- Floating Stars -->
+    <div class="stars-container" id="stars"></div>
+
+    <!-- Music Toggle -->
+    <button id="music-toggle" class="music-btn" title="Toggle Music">
+        <span class="music-icon">🎵</span>
+    </button>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="sparkle-text">
+                <h1 class="birthday-title">
+                    <span class="word" style="--delay: 0.1s">Happy</span>
+                    <span class="word" style="--delay: 0.3s">Birthday</span>
+                    <span class="word name" style="--delay: 0.5s">Prachi!</span>
+                </h1>
+            </div>
+            <div class="cake-emoji">🎂</div>
+            <p class="subtitle">Wishing you a day filled with happiness and a year filled with joy!</p>
+            <div class="scroll-indicator">
+                <span>Scroll Down</span>
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+            </div>
+        </div>
+        <div class="floating-gifts"></div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section class="countdown-section" id="countdown">
+        <div class="container">
+            <h2 class="section-title">Counting Every Moment ✨</h2>
+            <div class="countdown-container">
+                <div class="countdown-box">
+                    <div class="countdown-value" id="days">00</div>
+                    <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-box">
+                    <div class="countdown-value" id="hours">00</div>
+                    <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-box">
+                    <div class="countdown-value" id="minutes">00</div>
+                    <div class="countdown-label">Minutes</div>
+                </div>
+                <div class="countdown-box">
+                    <div class="countdown-value" id="seconds">00</div>
+                    <div class="countdown-label">Seconds</div>
+                </div>
+            </div>
+            <p class="countdown-message">Until your next birthday! 🎉</p>
+        </div>
+    </section>
+
+    <!-- Birthday Message Section -->
+    <section class="message-section" id="message">
+        <div class="container">
+            <div class="message-card">
+                <div class="card-glow"></div>
+                <div class="envelope">
+                    <div class="envelope-flap"></div>
+                    <div class="letter">
+                        <p class="greeting">Dear Prachi,</p>
+                        <p class="message-text">
+                            Happy Birthday! 🎂🎉
+                        </p>
+                        <p class="message-text">
+                            I know I'm a little late, but my wishes are always on time for you! 
+                            College kept me busy, but you know you're always special to me. 
+                            Your friendship means the world to me! 🌍
+                        </p>
+                        <p class="message-text">
+                            May this year bring you everything you've been wishing for - 
+                            success, happiness, and all the good vibes! You deserve the best! ✨
+                        </p>
+                        <p class="message-text apology">
+                            Sorry late ho gya yaar! 🙏 College tha na...<br>
+                            But birthday wish toh full on hai! 😄🎈
+                        </p>
+                        <p class="signature">With lots of love,<br>Your Dude ❤️</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <h2 class="section-title">Our Precious Memories 📸</h2>
+            
+            <!-- Photo 1 - Left BIG -->
+            <div class="photo-showcase left big">
+                <div class="photo-wrapper">
+                    <div class="photo-frame">
+                        <img src="assets/photos/photo1.jpg.png" alt="Memory 1" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <div class="photo-placeholder" style="display:none">
+                            <span>📷</span>
+                            <p>Add Photo 1</p>
+                        </div>
+                    </div>
+                    <div class="photo-decor decor-1"></div>
+                </div>
+                <div class="photo-info">
+                    <h3>Beautiful Smile 😊</h3>
+                    <p>Teri muskaan sabse khoobsurat hai</p>
+                </div>
+            </div>
+
+            <!-- Photo 2 - Right -->
+            <div class="photo-showcase right">
+                <div class="photo-wrapper">
+                    <div class="photo-frame">
+                        <img src="assets/photos/photo2.jpg.png" alt="Memory 2" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <div class="photo-placeholder" style="display:none">
+                            <span>📷</span>
+                            <p>Add Photo 2</p>
+                        </div>
+                    </div>
+                    <div class="photo-decor decor-2"></div>
+                </div>
+                <div class="photo-info">
+                    <h3>So Pretty 💫</h3>
+                    <p>Hamesha itni hi cute rehna</p>
+                </div>
+            </div>
+
+            <!-- Photo 3 - Left -->
+            <div class="photo-showcase left">
+                <div class="photo-wrapper">
+                    <div class="photo-frame">
+                        <img src="assets/photos/photo3.jpg.png" alt="Memory 3" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <div class="photo-placeholder" style="display:none">
+                            <span>📷</span>
+                            <p>Add Photo 3</p>
+                        </div>
+                    </div>
+                    <div class="photo-decor decor-3"></div>
+                </div>
+                <div class="photo-info">
+                    <h3>Looking Cute 🌸</h3>
+                    <p>Cuteness overloaded!</p>
+                </div>
+            </div>
+
+            <!-- Photo 4 - Right BIG -->
+            <div class="photo-showcase right big">
+                <div class="photo-wrapper">
+                    <div class="photo-frame">
+                        <img src="assets/photos/photo4.jpg.png" alt="Memory 4" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <div class="photo-placeholder" style="display:none">
+                            <span>📷</span>
+                            <p>Add Photo 4</p>
+                        </div>
+                    </div>
+                    <div class="photo-decor decor-4"></div>
+                </div>
+                <div class="photo-info">
+                    <h3>Always Happy 🎈</h3>
+                    <p>Ye wali smile kabhi mat chhodna</p>
+                </div>
+            </div>
+
+            <!-- Photo 5 - Left -->
+            <div class="photo-showcase left">
+                <div class="photo-wrapper">
+                    <div class="photo-frame">
+                        <img src="assets/photos/photo5.jpg.png" alt="Memory 5" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <div class="photo-placeholder" style="display:none">
+                            <span>📷</span>
+                            <p>Add Photo 5</p>
+                        </div>
+                    </div>
+                    <div class="photo-decor decor-5"></div>
+                </div>
+                <div class="photo-info">
+                    <h3>Stunning 💃</h3>
+                    <p>Dance queen!</p>
+                </div>
+            </div>
+
+            <!-- Photo 6 - Right -->
+            <div class="photo-showcase right">
+                <div class="photo-wrapper">
+                    <div class="photo-frame">
+                        <img src="assets/photos/photo6.jpg.png" alt="Memory 6" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <div class="photo-placeholder" style="display:none">
+                            <span>📷</span>
+                            <p>Add Photo 6</p>
+                        </div>
+                    </div>
+                    <div class="photo-decor decor-6"></div>
+                </div>
+                <div class="photo-info">
+                    <h3>Elegant ✨</h3>
+                    <p>Grace personified</p>
+                </div>
+            </div>
+
+            <!-- Photo 7 - Left BIG -->
+            <div class="photo-showcase left big">
+                <div class="photo-wrapper">
+                    <div class="photo-frame">
+                        <img src="assets/photos/photo7.jpg.png" alt="Memory 7" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <div class="photo-placeholder" style="display:none">
+                            <span>📷</span>
+                            <p>Add Photo 7</p>
+                        </div>
+                    </div>
+                    <div class="photo-decor decor-7"></div>
+                </div>
+                <div class="photo-info">
+                    <h3>Cute Pose 📷</h3>
+                    <p>Camera ka favourite!</p>
+                </div>
+            </div>
+
+            <!-- Photo 8 - Right -->
+            <div class="photo-showcase right">
+                <div class="photo-wrapper">
+                    <div class="photo-frame">
+                        <img src="assets/photos/photo8.jpg.png" alt="Memory 8" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <div class="photo-placeholder" style="display:none">
+                            <span>📷</span>
+                            <p>Add Photo 8</p>
+                        </div>
+                    </div>
+                    <div class="photo-decor decor-8"></div>
+                </div>
+                <div class="photo-info">
+                    <h3>Best Friend 💕</h3>
+                    <p>Best friend forever!</p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Shayari Section -->
+    <section class="shayari-section" id="shayari">
+        <div class="container">
+            <h2 class="section-title">Birthday Ki Shayari 🎭</h2>
+            <div class="shayari-container">
+                <div class="shayari-card fun" style="--delay: 0.1s">
+                    <div class="shayari-type">Funny 😂</div>
+                    <p class="shayari-text">
+                        Umar badh rahi hai, par attitude wahi purana hai,<br>
+                        Birthday tera hai, par party ka plan humara hai! 😂<br><br>
+                        Cake tu kaategi, photos hum khinchwayenge,<br>
+                        Gift ke naam pe bas "thank you" bolkar nikal jayenge! 🤣<br><br>
+                        Khush reh, mast reh, tension ko maar goli,<br>
+                        Aaj birthday hai tera — kal se phir wahi boring zindagi! 😜🎉
+                    </p>
+                    <div class="shayari-author">- Your Dude 🎂</div>
+                </div>
+                <div class="shayari-card sweet" style="--delay: 0.3s">
+                    <div class="shayari-type">Dil Se 💕</div>
+                    <p class="shayari-text">
+                        Teri muskaan yunhi hamesha bani rahe,<br>
+                        Teri zindagi khushiyon se saji rahe.<br>
+                        Har khwaab tera haqeeqat ban jaaye,<br>
+                        Aur har din tera birthday se bhi zyada special ho jaaye. 🎂✨<br><br>
+                        Bas ek dua hai meri tere liye,<br>
+                        Khushiyan hi khushiyan mile zindagi ke har mod pe. 💕
+                    </p>
+                    <div class="shayari-author">- Your Dude 🥳</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wishes from Friends Section -->
+    <section class="wishes-section" id="wishes">
+        <div class="container">
+            <h2 class="section-title">Birthday Wishes 💌</h2>
+            <div class="wishes-container">
+                <div class="wish-card" style="--delay: 0.1s">
+                    <div class="wish-icon">🎉</div>
+                    <p class="wish-text">"Happy Birthday Prachi! Stay amazing and keep shining!"</p>
+                    <p class="wish-author">- Your Dude</p>
+                </div>
+                <div class="wish-card" style="--delay: 0.2s">
+                    <div class="wish-icon">🎈</div>
+                    <p class="wish-text">"Wishing you all the happiness in the world! You deserve it!"</p>
+                    <p class="wish-author">- Your Dude</p>
+                </div>
+                <div class="wish-card" style="--delay: 0.3s">
+                    <div class="wish-icon">🎂</div>
+                    <p class="wish-text">"May your birthday be as wonderful as you are!"</p>
+                    <p class="wish-author">- Your Dude</p>
+                </div>
+                <div class="wish-card" style="--delay: 0.4s">
+                    <div class="wish-icon">🌟</div>
+                    <p class="wish-text">"Sorry for being late, but my wishes are always special for you!"</p>
+                    <p class="wish-author">- Your Dude</p>
+                </div>
+                <div class="wish-card" style="--delay: 0.5s">
+                    <div class="wish-icon">💕</div>
+                    <p class="wish-text">"Happy Birthday Prachi! You're not just a friend, you're family. Love you always!"</p>
+                    <p class="wish-author">- Your Bestie</p>
+                </div>
+                <div class="wish-card" style="--delay: 0.6s">
+                    <div class="wish-icon">🌸</div>
+                    <p class="wish-text">"Prachi! Another year of being fabulous! May all your dreams come true, gorgeous!"</p>
+                    <p class="wish-author">- Your Sister</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Popup Modal -->
+    <div id="image-popup" class="image-popup">
+        <div class="popup-content">
+            <div class="pixel-burst" id="pixel-burst"></div>
+            <div class="popup-image-container">
+                <img id="popup-image" src="" alt="Memory">
+            </div>
+            <div class="popup-shayari" id="popup-shayari">
+                <p class="shayari-line">Teri yaadein hain mere paas,</p>
+                <p class="shayari-line">Har pal hai tera ehsaas!</p>
+                <p class="shayari-author">- Your Dude 💕</p>
+            </div>
+            <button class="popup-close" id="popup-close">✕</button>
+        </div>
+    </div>
+
+    <!-- Final Celebration Section -->
+    <section class="celebration-section" id="celebration">
+        <!-- Photos behind cake - FULL SCREEN one by one -->
+        <div class="photos-behind" id="photos-behind">
+            <div class="behind-photo"><img src="assets/photos/photo1.jpg.png" alt=""></div>
+            <div class="behind-photo"><img src="assets/photos/photo2.jpg.png" alt=""></div>
+            <div class="behind-photo"><img src="assets/photos/photo3.jpg.png" alt=""></div>
+            <div class="behind-photo"><img src="assets/photos/photo4.jpg.png" alt=""></div>
+            <div class="behind-photo"><img src="assets/photos/photo5.jpg.png" alt=""></div>
+            <div class="behind-photo"><img src="assets/photos/photo6.jpg.png" alt=""></div>
+            <div class="behind-photo"><img src="assets/photos/photo7.jpg.png" alt=""></div>
+            <div class="behind-photo"><img src="assets/photos/photo8.jpg.png" alt=""></div>
+            <!-- Wishes appear AFTER all photos -->
+            <div class="behind-wish">💕 Happy Birthday Prachi! 💕</div>
+            <div class="behind-wish">🌸 Stay Amazing! 🌸</div>
+            <div class="behind-wish">💖 You Deserve The Best! 💖</div>
+            <div class="behind-wish">✨ Keep Shining Prachi! ✨</div>
+            <div class="behind-wish">🎂 Many Happy Returns! 🎂</div>
+            <div class="behind-wish">💐 Love You Always! 💐</div>
+            <div class="behind-wish">🦋 Follow Your Dreams! 🦋</div>
+            <div class="behind-wish">❤️ From Your Dude ❤️</div>
+        </div>
+
+        <div class="celebration-content">
+            <div class="cake-container">
+                <div class="cake-3d">
+                    <div class="candles">
+                        <div class="candle-big"><div class="flame-big"></div></div>
+                        <div class="candle-big"><div class="flame-big"></div></div>
+                        <div class="candle-big"><div class="flame-big"></div></div>
+                        <div class="candle-big"><div class="flame-big"></div></div>
+                        <div class="candle-big"><div class="flame-big"></div></div>
+                    </div>
+                    <div class="cake-layer cake-top"></div>
+                    <div class="cake-layer cake-middle"></div>
+                    <div class="cake-layer cake-bottom"></div>
+                </div>
+            </div>
+            
+            <h2 class="celebration-title">Make a Wish!</h2>
+            
+            <button class="blow-btn" id="blow-btn">
+                <span class="blow-icon">🌬️</span>
+                <span>Blow Candles!</span>
+            </button>
+        </div>
+
+        <!-- Flash -->
+        <div class="flash-overlay" id="flash-overlay"></div>
+        
+        <!-- Final Message -->
+        <div class="final-message" id="final-message">
+            <div class="final-content">
+                <div class="final-emoji">🎂🎉🥳</div>
+                <h1>Happy Birthday Prachi!</h1>
+                <p>Teri zindagi mein khushiyon ka dhamaal ho!</p>
+                <div class="final-hearts">❤️💕💖💗💝</div>
+                <p class="final-sign">- Tera Dude 🤗</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audio element for background music -->
+    <audio id="birthday-music" loop preload="auto">
+        <source src="assets/music/happy_birthday.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
