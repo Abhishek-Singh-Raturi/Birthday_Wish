@@ -284,31 +284,25 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closePopup
 const blowBtn = document.getElementById('blow-btn');
 const flashOverlay = document.getElementById('flash-overlay');
 const finalMessage = document.getElementById('final-message');
-const photosBehind = document.getElementById('photos-behind');
 
-// Blow Button - Photos FULL SCREEN one by one, then wishes
+// Blow Button - Simple blow candles
 if (blowBtn) {
     blowBtn.addEventListener('click', () => {
         // Blow out candles
         const candles = document.querySelector('.candles');
         if (candles) candles.classList.add('blown');
 
-        // Start photos full screen one by one
-        setTimeout(() => {
-            photosBehind.classList.add('move');
-        }, 200);
-
-        // Flash after all photos (8 photos x 8 sec = 64 sec)
+        // Flash effect
         setTimeout(() => {
             flashOverlay.classList.add('active');
-            setTimeout(() => flashOverlay.classList.remove('active'), 2000);
-        }, 64000);
+            setTimeout(() => flashOverlay.classList.remove('active'), 1500);
+        }, 500);
 
-        // Show final message after wishes appear
+        // Show final message
         setTimeout(() => {
             finalMessage.classList.add('show');
             launchConfetti();
-        }, 82000);
+        }, 2000);
 
         // Play music
         if (music.paused) {
